@@ -25,9 +25,14 @@ def create(request):
 def list_instagram(request):
     keyword = request.GET.get('q', '').strip()
     clean_keyword = keyword.replace('@', '')
-    platform = request.GET.get('platform', 'instagram')
+    platform = request.GET.get('platform')
 
-    semua_akun = Instagram.objects.filter(platform=platform)
+    semua_akun = Instagram.objects.all()
+
+    if platform:
+        semua_akun = semua_akun.filter(
+            platform=platform
+        )
 
     if keyword:
         semua_akun = semua_akun.filter(

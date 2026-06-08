@@ -605,13 +605,21 @@
     }
 
     .stat-box,
-    .account-card-new,
     .search-box,
     .platform-switch a,
     .add-btn,
     .form-wrapper {
-      position: relative;
-      overflow: hidden;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .account-card-new {
+        position: relative;
+        overflow: visible;
+    }
+
+    .account-card-new .dropdown-menu {
+        z-index: 9999;
     }
 
     .stat-box::before,

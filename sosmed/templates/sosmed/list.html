@@ -25,11 +25,11 @@
 
     <div class="platform-title">PLATFORM</div>
 
-    <a class="platform-item" href="?platform=instagram">
+    <a class="platform-item" href="{% url 'sosmed:list' %}?platform=instagram">
       <i class="fa-brands fa-instagram"></i> Instagram
     </a>
 
-    <a class="platform-item" href="?platform=tiktok">
+    <a class="platform-item" href="{% url 'sosmed:list' %}?platform=tiktok">
       <i class="fa-brands fa-tiktok"></i> TikTok
     </a>
 
@@ -196,12 +196,17 @@
     </section>
 
     <div class="footer-info">
-      Menampilkan {{ semua_akun|length }} akun
-      {% if platform == 'tiktok' %}
-        TikTok
+
+      {% if platform == 'instagram' %}
+          Menampilkan {{ semua_akun|length }} akun Instagram
+
+      {% elif platform == 'tiktok' %}
+          Menampilkan {{ semua_akun|length }} akun TikTok
+
       {% else %}
-        Instagram
+          Menampilkan {{ semua_akun|length }} akun
       {% endif %}
+
     </div>
 
   </main>

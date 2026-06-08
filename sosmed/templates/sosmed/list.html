@@ -51,8 +51,22 @@
           <i class="fa-solid fa-bars"></i>
         </button>
 
-        <h1>Daftar <span>Akun</span></h1>
-        <p>Kelola semua akun sosial media Anda</p>
+        {% if platform == 'instagram' %}
+
+            <h1>Daftar <span>Instagram</span></h1>
+            <p>Kelola semua akun Instagram Anda</p>
+
+        {% elif platform == 'tiktok' %}
+
+            <h1>Daftar <span>TikTok</span></h1>
+            <p>Kelola semua akun TikTok Anda</p>
+
+        {% else %}
+
+            <h1>Daftar <span>Akun</span></h1>
+            <p>Kelola semua akun sosial media Anda</p>
+
+        {% endif %}
       </div>
 
       <div class="top-actions dropdown">

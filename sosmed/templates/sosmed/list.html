@@ -25,11 +25,13 @@
 
     <div class="platform-title">PLATFORM</div>
 
-    <a class="platform-item" href="{% url 'sosmed:list' %}?platform=instagram">
+    <a class="platform-item {% if platform == 'instagram' %}active{% endif %}"
+        href="{% url 'sosmed:list' %}?platform=instagram">
       <i class="fa-brands fa-instagram"></i> Instagram
     </a>
 
-    <a class="platform-item" href="{% url 'sosmed:list' %}?platform=tiktok">
+    <a class="platform-item {% if platform == 'tiktok' %}active{% endif %}"
+        href="{% url 'sosmed:list' %}?platform=tiktok">
       <i class="fa-brands fa-tiktok"></i> TikTok
     </a>
 
@@ -53,20 +55,21 @@
 
         {% if platform == 'instagram' %}
 
-            <h1>Daftar <span>Instagram</span></h1>
-            <p>Kelola semua akun Instagram Anda</p>
+        <h1>Daftar <span>Instagram</span></h1>
+        <p>Menampilkan seluruh akun Instagram yang tersimpan</p>
 
         {% elif platform == 'tiktok' %}
 
-            <h1>Daftar <span>TikTok</span></h1>
-            <p>Kelola semua akun TikTok Anda</p>
+        <h1>Daftar <span>TikTok</span></h1>
+        <p>Menampilkan seluruh akun TikTok yang tersimpan</p>
 
         {% else %}
 
-            <h1>Daftar <span>Akun</span></h1>
-            <p>Kelola semua akun sosial media Anda</p>
+        <h1>Semua <span>Akun</span></h1>
+        <p>Menampilkan seluruh akun sosial media</p>
 
         {% endif %}
+
       </div>
 
       <div class="top-actions dropdown">

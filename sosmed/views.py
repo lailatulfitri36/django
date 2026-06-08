@@ -11,7 +11,7 @@ def create(request):
     if request.method == 'POST':
         if akun_form.is_valid():
             akun_form.save()
-            messages.success(request, '🎉 Akun berhasil ditambahkan')
+            messages.success(request, 'Akun berhasil ditambahkan')
             return redirect('sosmed:list')
 
     context = {
@@ -70,7 +70,7 @@ def update(request, update_id):
     if request.method == 'POST':
         if akun_form.is_valid():
             akun_form.save()
-            messages.success(request, '✏️ Data berhasil diupdate')
+            messages.success(request, '✏️ Akun berhasil diupdate')
             return redirect('sosmed:list')
 
     context = {
@@ -83,5 +83,5 @@ def update(request, update_id):
 
 def delete(request, delete_id):
     Instagram.objects.filter(id=delete_id).delete()
-    messages.error(request, '🗑️ Data berhasil dihapus')
+    messages.error(request, '🗑️ Akun berhasil dihapus')
     return redirect('sosmed:list')

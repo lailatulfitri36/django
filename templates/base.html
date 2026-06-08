@@ -647,9 +647,15 @@
       border-radius: inherit;
       pointer-events: none;
 
-      background:
-        radial-gradient(circle at 18% 15%, rgba(255,255,255,.95), transparent 18%),
-        radial-gradient(circle at 85% 85%, rgba(147,197,253,.22), transparent 24%);
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,0)
+      );
+    }
+
+    .account-card-new::before {
+        display: none;
     }
 
     .add-btn,

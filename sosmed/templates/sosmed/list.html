@@ -81,53 +81,32 @@
     </section>
 
     <section class="stats-grid">
+
       <div class="stat-box">
         <div class="stat-logo">
-          {% if platform == 'tiktok' %}
-            <i class="fa-brands fa-tiktok"></i>
-          {% else %}
-            <i class="fa-brands fa-instagram"></i>
-          {% endif %}
+          <i class="fa-brands fa-tiktok"></i>
         </div>
 
         <div>
-          <h2>{{ semua_akun|length }}</h2>
-          <p>
-            Total Akun
-            {% if platform == 'tiktok' %}
-              TikTok
-            {% else %}
-              IG
-            {% endif %}
-          </p>
+          <p>Jumlah Akun Tiktok</p>
+          <h2>{{ jumlah_tiktok }}</h2>
         </div>
       </div>
 
       <div class="stat-box">
-        <div class="stat-logo dark">
-          <i class="fa-solid fa-fire"></i>
+        <div class="stat-logo">
+          <i class="fa-brands fa-instagram"></i>
         </div>
 
         <div>
-          <h2>Aktif</h2>
-          <p>Status Data</p>
+          <p>Jumlah Akun IG</p>
+          <h2>{{ jumlah_instagram }}</h2>
         </div>
       </div>
+
     </section>
 
     <section class="toolbar">
-
-      <div class="platform-switch">
-        <a href="?platform=instagram"
-           class="{% if platform == 'instagram' %}active{% endif %}">
-          <i class="fa-brands fa-instagram"></i> Instagram
-        </a>
-
-        <a href="?platform=tiktok"
-           class="{% if platform == 'tiktok' %}active{% endif %}">
-          <i class="fa-brands fa-tiktok"></i> TikTok
-        </a>
-      </div>
 
       <form method="GET" class="search-box">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -142,10 +121,6 @@
 
         <button type="submit" class="search-btn">Cari</button>
       </form>
-
-      <a href="{% url 'sosmed:create' %}" class="add-btn">
-        <i class="fa-solid fa-plus"></i> Tambah Akun
-      </a>
 
     </section>
 

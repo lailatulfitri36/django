@@ -41,6 +41,14 @@ def list_instagram(request):
         'semua_akun': semua_akun,
         'keyword': keyword,
         'platform': platform,
+
+        'jumlah_instagram': Instagram.objects.filter(
+            platform='instagram'
+        ).count(),
+
+        'jumlah_tiktok': Instagram.objects.filter(
+            platform='tiktok'
+        ).count(),
     }
 
     return render(request, 'sosmed/list.html', context)
